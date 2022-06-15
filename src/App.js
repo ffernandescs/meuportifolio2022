@@ -394,7 +394,7 @@ function App() {
               </div>
             </div>
             <div className="itemContact">
-              <span><FaMailBulk/></span>
+              <span><GoLocation/></span>
               <div className="textContact">
                 <p>Endereço</p>
                 <h1>Avenida Barão de Bonito, 462 - Recife - PE - 50740-080</h1>
