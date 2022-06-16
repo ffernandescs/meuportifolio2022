@@ -1,10 +1,127 @@
+.App {
+    position: relative;
+    background-color: #000000;
+    height: 100vh;
+
+}
+
 .containerPage {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     background-color: #000000;
+}
+
+.spinner {
+    width: 100%;
+    height: 100%;
+}
+
+.spinner2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 55px;
+    color: #DE4313;
+    position: absolute;
+    top: 50px;
+    left: -250px;
+    right: 0;
+    bottom: 0;
+    margin: auto;
     overflow: hidden;
+
+}
+
+.nameCode {
+    position: absolute;
+    right: 570px;
+    font-size: 110px;
+    font-weight: bold;
+}
+
+.spinner.active {
+    display: none;
+}
+
+.css-13gcv1c {
+    z-index: 999999999999999999;
+}
+
+
+
+.btnOne {
+    position: relative;
+    width: 160px;
+    height: 55px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #FF4900;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.btnTwo {
+    position: relative;
+    width: 160px;
+    height: 55px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #111111;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.buttonHome button {
+    margin-right: 10px;
+}
+
+.btnOne:hover{
+    color: #000000;
+}
+
+.btnOne::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    content: '';
+    width: 80%;
+    height: 0;
+    background-color: #ffffff;
+    transition: .7s ease;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    z-index: -1;
+}
+
+.btnOne:hover::before {
+    height: 390%;
+}
+
+.btnTwo:hover{
+    background-color: transparent;
+}
+
+.btnTwo::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    content: '';
+    width: 80%;
+    height: 0;
+    background-color: #313030;
+    transition: .7s ease;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    z-index: -1;
+}
+
+.btnTwo:hover::before {
+    height: 390%;
 }
 
 .menu {
@@ -12,11 +129,14 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    box-shadow: 0 0 15px #ff480073;
-    padding-bottom: 15px;
+    transition: 0.9s;
 }
 
+
 .menu.active {
+    position: fixed;
+    background-color: #000000f3;
+    z-index: 5555555;
     box-shadow: 0 0 10px #ff4800;
     padding: 0 0 20px 0;
 
@@ -83,37 +203,46 @@ nav {
     display: flex;
     align-items: flex-end;
     height: 100%;
+    padding-top: 20px ;
 }
 
-.navigation li {
+.navigation li a {
     display: flex;
     align-items: flex-end;
     justify-content: center;
     height: 100%;
-    border-radius: 5px;
-    padding: 0 10px 10px 10px;
-    margin-left: 30px;
+    padding: 20px 0;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: 10px;
     cursor: pointer;
     transition: all .3s ease;
+    border-bottom: 3px solid transparent;
 }
 
 .navigation li:hover {
-    background-color: #FF4900;
+    border-bottom: 3px solid #ff4800;
+}
+
+
+.btnContatos {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    margin-left: 20px;
 }
 
 .navigation li:last-child {
-    align-items: center;
-    height: 70%;
-    background-color: #FF4900;
-    border-radius: 8px;
-    padding: 0 20px 10px 20px;
+    padding: 0;
 }
+
 
 .textMenu {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    height: 100%;
     font-size: 16px;
     font-weight: normal;
     font-style: normal;
@@ -197,7 +326,21 @@ main {
     height: calc(100vh - 200px);
     cursor: pointer;
     margin-right: 15px;
+    overflow: hidden;
 }
+
+.logoImg::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: #0000004d;
+    z-index: 0;
+}
+
+
 
 .fundoImg {
     position: absolute;
@@ -215,6 +358,7 @@ main {
     right: 0;
     margin: auto;
     max-width: 400px;
+    width: 100%;
     object-fit: contain;
     border-radius: 20px;
     margin-right: 25px;
@@ -242,43 +386,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
-.buttonHome button {
-    position: relative;
-    width: 160px;
-    height: 55px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #FF4900;
-    border-radius: 10px;
-    margin-right: 10px;
-    cursor: pointer;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.buttonHome button:hover{
-    background-color: transparent;
-}
-
-.buttonHome button::before {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    content: '';
-    width: 500px;
-    height: 0;
-    background-color: #111111;
-    transition: .7s ease;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    z-index: -1;
-}
-
-.buttonHome button:hover::before {
-    height: 390%;
-}
 
 .buttonHome:last-child button {
     border: 1px solid #707070;
@@ -293,8 +402,11 @@ section {
     width: 100%;
     margin: 60px 0;
     padding: 0 20px;
+}
 
-
+.boxSobre {
+    display: flex;
+    align-items: center;
 }
 
 .containerSobre {
@@ -303,7 +415,6 @@ section {
     background-color: #fff;
     border-radius: 10px;
     margin-right: 25px;
-    overflow: hidden;
 }
 
 .containerSobre img {
@@ -318,14 +429,15 @@ section {
     align-items: center;
     justify-content: space-between;
     width: 50%;
-    height: 65vh;
     margin-left: 25px;
+    overflow: hidden;
 }
 
 .titleSobre {
     font-size: 30px;
     font-weight: 600;
     color: #fff;
+    margin-bottom: 15px;
 }
 
 .textSobre {
@@ -339,14 +451,19 @@ section {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    overflow: hidden;
+}
 
+.skill {
+    width: 100%;
+    height: 370px;
 }
 
 .skillTitle {
     position: relative;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-starts;
+    justify-content: flex-start;
     width: 100%;
     height: 60px;
 }
@@ -376,6 +493,40 @@ section {
     z-index: 2;
 }
 
+.box1 {
+    width: 80%;
+}
+
+.box2 {
+    width: 70%;
+}
+
+.box3 {
+    width: 80%;
+}
+
+.box4 {
+    width: 60%;
+}
+
+.box5 {
+    width: 40%;
+}
+
+.box6 {
+    width: 40%;
+}
+
+.box7 {
+    width: 70%;
+}
+
+.box8 {
+    width: 30%;
+}
+
+
+
 .skillTitle span {
     position: relative;
     font-size: 12px;
@@ -392,12 +543,11 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    content: '';
     width: 40px;
     height: 20px;
-    background-color: #9c4826;
+    background-image: linear-gradient( 135deg, #b37a26 10%, #DE4313 100%);
     border-radius: 5px;
-    color: #fff;
+    color: rgb(255, 255, 255);
     font-size: 10px;
     font-weight: bold;
 }
@@ -532,33 +682,7 @@ section {
     transition: 0.7s ease;
     overflow: hidden;
     z-index:  1;
-    
 }
-
-.btnMaisService:hover {
-    background-color: transparent;
-    border: 1px solid #707070;
-}
-
-
-.btnMaisService::before {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    content: '';
-    width: 120px;
-    height: 0;
-    background-color: #111111;
-    transition: .7s ease;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    z-index: -1;
-}
-
-.btnMaisService:hover::before {
-    height: 370%;
-}
-
- 
 
 .cardInfo {
     display: flex;
@@ -569,7 +693,6 @@ section {
 
 .cardItem {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 250px;
@@ -588,18 +711,47 @@ section {
     border: none;
 }
 
+.cardItem .line:hover {
+    color: #fff;
+    z-index: 10;
+}
+
 .cardItem h2 {
-    font-size: 36px;
-    color: #fff;
-    height: 45px;
-}
-
-.cardItem p {
-    font-size: 18px;
+    font-size: 55px;
     color: #fff;
 }
 
-.sliderProject {
+.cardItem .line {
+    position: static;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.cardItem .line .line2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 90px;
+    height: 70px;
+}
+
+.cardItem .line span {
+    width: 100%;
+    height: 12px;
+}
+
+.navigationRoutes {
+    width: 100%;
+    overflow: hidden;
+}
+
+.containerPortifolio {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -607,53 +759,129 @@ section {
     width: 100%;
 }
 
-.sliderProject ul {
+.linkRotas {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    border-bottom: 1px solid #FF4900;
+    margin-bottom: 20px;
+}
+
+.linkRotas li {
+    transition: all .3s ease-in-out;
+    border-bottom: 2px solid transparent;
+}
+
+.linkRotas li:hover {
+    border-bottom: 2px solid #ff4800;
+}
+
+.linkRotas li a {
+    display: block;
+    font-size: 16px;
+    color: #fff;
+    padding: 20px 40px;
+
+}
+
+
+.sliderProject {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
     margin-bottom: 40px;
 }
 
-.sliderProject ul li {
+.sliderProject li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;
+    background-color: #111111;
+    border-radius: 10px;
     color: #fff;
     padding: 20px 20px 20px 20px;
     transition: all .3s ease;
     cursor: pointer;
+    margin: 10px;
+    transform: scale(1);
+    border: 1px solid transparent;
+
 }
 
-.sliderProject ul li:hover {
-    background-color: #FF4900;
-    border-radius: 5px 5px 0 0;
+.sliderProject li:hover {
+    transform: scale(1.05);
+    border: 1px solid rgba(169, 166, 166, 0.527);
 }
 
-
-.boxPortifolio {
+.textPortifolio {
     width: 100%;
+    margin-bottom: 15px;
 }
 
-.itemPortifolio {
+.textPortifolio h1 {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.textPortifolio p {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.imgPortifolio {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    object-fit:cover;
+}
+
+.btnPortifolio {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
-.itemPortifolio img {
-    width: 100%;
-    max-width: 380px;
-    height: 400px;
-    object-fit: cover;
-    margin-bottom: 25px;
-    border-radius: 10px;
+.btnBox1 {
+    width: 120px;
+    height: 50px;
+    transition: all .3 ease-in-out;  
+}
+
+.btnBox2 {
+    width: 120px;
+    height: 50px;
+    background-color: #000000;
+    border: 1px solid #707070;
+    transition: all .3 ease-in-out;
+}
+
+
+.btnBox1:hover::before {
+    display: none;
+}
+
+.btnBox1:hover {
+    background-color: #fff;
+}
+
+.btnBox2:hover {
+    background-color: #111111;
+}
+
+.btnBox2:hover::before {
+    display: none;
 }
 
 .p1 {
     width: 40%;
 }
-
-
 
 footer {
     position: relative;
@@ -671,6 +899,18 @@ footer {
     height: 400px;
 }
 
+.downloadCV::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background-color: #0000004d;
+    z-index: 0;
+
+}
+
 .textBtn {
     position: absolute;
     top: 40%;
@@ -679,6 +919,7 @@ footer {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .textBtn h1 {
@@ -701,30 +942,6 @@ footer {
     z-index: 2;
     overflow: hidden;
 }
-
-.textBtn button:hover {
-    background-color: transparent;
-    border: 1px solid #707070;
-}
-
-
-.textBtn button::before {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    content: '';
-    width: 120px;
-    height: 0;
-    background-color: #111111;
-    transition: .7s ease;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    z-index: -1;
-}
-
-.textBtn button:hover::before {
-    height: 370%;
-}
-
 
 .downloadCV img {
     width: 100%;
@@ -800,6 +1017,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
 
 }
 
@@ -869,47 +1087,13 @@ form label textarea {
 
 }
 
-form button {
-    position: relative;
-    width: 200px;
-    height: 55px;
-    font-size: 16px;
-    background-color: #FF4900;
-    border-radius: 10px;
-    margin-right: 10px;
-    cursor: pointer;
-    z-index: 1;
-    overflow: hidden;
-}
-
-form button:hover{
-    background-color: transparent;
-}
-
-form button::before {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    content: '';
-    width: 500px;
-    height: 0;
-    background-color: #111111;
-    transition: .7s ease;
-    transform: translate(-50%, -50%) rotate(-45deg);
-    z-index: -1;
-}
-
-form button:hover::before {
-    height: 390%;
-}
-
 .socialRede {
     position: absolute;
     bottom: 42px;
     left: -20px;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
     width: 100%;
     max-width: 600px;
     background-color: #FF4900;
@@ -948,19 +1132,30 @@ form button:hover::before {
     color: #fff;
 }
 
+.btnTopScroll {
+    position: fixed;
+    bottom: -200%;
+    right: 20px;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s ease;
+}
+
+.btnTopScroll.active {
+    bottom: 20px;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
 
 
 .btnTop svg{
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
-    border: none;
     color: #707070a1;
     cursor: pointer;
-    z-index: 5;
 }
 
 .menuHamburger {
@@ -979,16 +1174,23 @@ form button:hover::before {
     }
 
     .logoImg {
-        width: 350px;
-        height: 350px;
+        width: 60%;
+        overflow: visible;
+    }
+
+    .fundoImg {
+        width: 100%;
+        height: 100%;
+        top: 20px;
     }
 
     .cardInfo {
         flex-wrap: wrap;
+        justify-content: center;
     }
 
     .cardInfo .cardItem {
-        margin-bottom: 40px;
+        margin: 40px;
     }
 
     .boxFooter {
@@ -1007,6 +1209,7 @@ form button:hover::before {
     .menu {
         position: relative;
     }
+
 
     nav {
         position: absolute;
@@ -1095,8 +1298,20 @@ form button:hover::before {
     }
 
     .logoImg {
-        width: 300px;
-        height: 300px;
+        width: 50%;
+        overflow: hidden;
+    }
+
+    .logoImg .imgPerfil  {
+        width: 100%;
+        height: 350px;
+        margin: 0;
+    }
+
+    .fundoImg {
+        width: 100%;
+        height: 350px;
+        margin: 0;
     }
 
     .nameDev {
@@ -1155,6 +1370,32 @@ form button:hover::before {
 
     .sliderProject ul {
         display: none;
+    }
+
+    .logoImg {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin: 0;
+        height: initial;
+    }
+
+    .fundoImg {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        width: initial;
+        height: 300px;
+    }
+
+    .logoImg .imgPerfil {
+        position: static;
+        width: initial;
+        height: 300px;
+    
     }
 }
 
