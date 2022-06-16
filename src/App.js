@@ -1,6 +1,8 @@
 import imgB from './assets/img/imgBanner.jpg'
 import imgBox from './assets/img/img2.webp'
-import perfil from './assets/img/perfil.jpeg'
+import perfil from './assets/img/fotoPerfiil.png'
+import fundoImg from './assets/img/fundoImg.png'
+
 import { 
   FaGitSquare, 
   FaGithubSquare,  
@@ -39,7 +41,7 @@ function App() {
               <span></span>
             </div>
             <h1 className='titleLogo'>Cod</h1>
-            <h1 className='title2'>e</h1>
+            <h1 className='title2'>r</h1>
             
           </div>
           <nav>
@@ -74,7 +76,7 @@ function App() {
             <h1 className='nameDev'>Me chamo Felipe Fernandes</h1>
             <p className='nameProfessional'>A Professional Web Developer and UI/UX Desingner</p>
             <div className="btnHome">
-              <a className='buttonHome' href="#">
+              <a className='buttonHome' href="https://drive.google.com/file/d/1mSShXzYGRbRx8qJiS2ComooY_MZTelt5/view?usp=sharing" target="blank_">
                 <button>Download CV</button>
               </a>
               <a className='buttonHome' href="#">
@@ -83,7 +85,8 @@ function App() {
             </div>
           </div>
           <div className="logoImg">
-            <img src={perfil} alt="" />
+            <img className='fundoImg' src={fundoImg} alt="" />
+            <img className='imgPerfil' src={perfil} alt="" />
           </div>
         </div>
       </main>
@@ -358,7 +361,7 @@ function App() {
       <div className="downloadCV">
         <div className="textBtn">
           <h1>Baixe o CV</h1>
-          <a href="">
+          <a href="https://drive.google.com/file/d/1mSShXzYGRbRx8qJiS2ComooY_MZTelt5/view?usp=sharing" target="blank_">
             <button>Download</button>
           </a>
         </div>
