@@ -441,12 +441,12 @@ section {
 .containerSobre {
     width: 50%;
     height: 65vh;
-    background-color: #fff;
     border-radius: 10px;
     margin-right: 25px;
 }
 
 .containerSobre img {
+    position: relative;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -459,7 +459,6 @@ section {
     width: 50%;
     margin-left: 25px;
     transition: all .3s ease;
-    overflow: hidden;
 }
 
 .infoSobre.active {
@@ -467,6 +466,7 @@ section {
 }
 
 .titleSobre {
+    position: relative;
     font-size: 30px;
     font-weight: 600;
     color: #fff;
@@ -478,6 +478,7 @@ section {
 }
 
 .textSobre {
+    position: relative;
     font-size: 14px;
     color: #fff;
 }
@@ -548,42 +549,35 @@ section {
 
 .box1 {
     width: 80%;
-    animation: progressBox1 10s forwards;
+    
 }
 
 .box2 {
     width: 70%;
-    animation: progressBox2 10s forwards;
 }
 
 .box3 {
     width: 80%;
-    animation: progressBox3 10s forwards;
 }
 
 .box4 {
     width: 60%;
-    animation: progressBox4 10s forwards;
 }
 
 .box5 {
     width: 40%;
-    animation: progressBox5 10s forwards;
 }
 
 .box6 {
     width: 40%;
-    animation: progressBox6 10s forwards;
 }
 
 .box7 {
     width: 70%;
-    animation: progressBox7 10s forwards;
 }
 
 .box8 {
     width: 30%;
-    animation: progressBox8 10s forwards;
 }
 
 @keyframes progressBox1 {
@@ -663,6 +657,7 @@ section {
 }
 
 .containerBox {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -798,6 +793,7 @@ section {
 }
 
 .cardInfo {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -863,6 +859,10 @@ section {
 .navigationRoutes {
     width: 100%;
     overflow: hidden;
+}
+
+#portifolio {
+    position: relative;
 }
 
 .containerPortifolio {
@@ -1323,6 +1323,43 @@ form label textarea {
 } 
 
 @media (max-width: 920px) {
+
+    .btnOne::before {
+        background-color: transparent;
+    }
+
+    .btnOne:hover {
+        color: #fff;
+    }
+
+    .btnTwo::before {
+        background-color: transparent;
+    }
+
+    .btnTwo:hover {
+        color: #fff;
+    }
+
+    .btnItem:hover {
+        background-color: #111111;
+    }
+
+    .cardItem:hover {
+        background-color: #111111;
+        border-width: 2px;
+        border-style: dashed;
+        border-color: #707070;
+        border-radius: 5px;    
+    }
+
+    .sliderProject li:hover {
+        transform: scale(1);
+        border: 1px solid rgba(169, 166, 166, 0.527);
+    }
+
+    .socialRede a span:hover {
+        transform: scale(1);
+    }
 
     .menu {
         position: relative;
@@ -1788,6 +1825,7 @@ form label textarea {
     .btnItem {
         width: 100%;
     }
+    
 }
 
 

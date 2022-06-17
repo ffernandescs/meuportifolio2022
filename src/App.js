@@ -35,8 +35,7 @@ import { Html, Javascript, ReactJS, Reactnative, NodeJs, NextJs, Firebase } from
 import { HashLoader } from 'react-spinners'
 import {css} from '@emotion/react'
 import ProgressBar from './components/ProgressBar'
-
-
+import {motion} from 'framer-motion'
 
 function App() {
 
@@ -104,7 +103,7 @@ useEffect(() => {
   setLoading(true)
   setTimeout(() => {
     setLoading(false)
-  }, 3000)
+  }, 30)
 }, [])
 
 
@@ -173,7 +172,11 @@ useEffect(() => {
         </header>
           <main>
           <div className="main" id='inicio'>
-            <div className="texHome">
+            <motion.div
+              initial={{left: "-30%"}}
+              whileInView={{left: "0%"}}
+              transition={{duration : 2, type: 'spring'}}
+              className="texHome">
               <h1 className='nameDev'>Olá, eu sou o Felipe Fernandes</h1>
               <p className='nameProfessional'>Sou Desenvolvedor Front-End.</p>
               <div className="btnHome">
@@ -184,88 +187,176 @@ useEffect(() => {
                   <button className='btnTwo'>Meu trabalho</button>
                 </Link>
               </div>
-            </div>
-            <div className="logoImg">
+            </motion.div>
+            <motion.div
+              initial={{right: "-44%", top: "0%"}}
+              whileInView={{right: "0%"}}
+              transition={{duration : 2, type: 'spring'}}
+              className="logoImg"
+              >
               <img className='fundoImg' src={fundoImg} alt="" />
               <img className='imgPerfil' src={perfil} alt="" />
-            </div>
+            </motion.div>
           </div>
         </main>
         <section>
           <div className="boxSobre">
             <div className="containerSobre">
-              <img src={imgBox} alt="" />
+              <motion.img
+                initial={{left: "-20rem"}}
+                whileInView={{left: "0rem"}}
+                transition={{duration : 2, type: 'spring'}}
+                src={imgBox} alt="" />
             </div>
             <div className="infoSobre" id='sobre'>
-              <h1 className='titleSobre'>Leia sobre minha história de luta de vida</h1>
+              <motion.h1
+                initial={{left: "20rem"}}
+                whileInView={{left: "0rem"}}
+                transition={{duration : 2, type: 'spring'}} 
+                className='titleSobre'>Leia sobre minha história de luta de vida</motion.h1>
               <div className="textInfo">
                 <span>
-                <p className='textSobre'>Ola pessoal! sejam bem vindos ao meu site. Meu nome é Felipe, tenho<span> 28 </span>
+                <motion.p
+                  initial={{left: "20rem"}}
+                  whileInView={{left: "0rem"}}
+                  transition={{duration : 3.5, type: 'spring'}} 
+                  className='textSobre'>Ola pessoal! sejam bem vindos ao meu site. Meu nome é Felipe, tenho<span> 28 </span>
                   anos e moro em Recife-PE, atualmente atuo como 
                   <span> Desenvolvedor Front End, 
-                  </span> Sou Formado em Redes de Computadores com mais de 8 anos de experiências na area de Suporte, porem a alguns anos estou focado em desenvolvimento Web/Mobile pois estou em busca de um sonho muito antigo que é ser programador. Sou apaixonado por tecnologias e sempre procuro buscar conhecimento e aprimorar minhas habilidades em busca de um maior crescimento profissional. É sempre gratificante poder entregar a melhor experiência com os produtos e serviços desenvolvidos por mim. Eu tenho alguns projetos de minha autoria como: <span>Landing Pages, Sites, E-commerces e Apps. </span></p>
+                  </span> Sou Formado em Redes de Computadores com mais de 8 anos de experiências na area de Suporte, porem a alguns anos estou focado em desenvolvimento Web/Mobile pois estou em busca de um sonho muito antigo que é ser programador. Sou apaixonado por tecnologias e sempre procuro buscar conhecimento e aprimorar minhas habilidades em busca de um maior crescimento profissional. É sempre gratificante poder entregar a melhor experiência com os produtos e serviços desenvolvidos por mim. Eu tenho alguns projetos de minha autoria como: <span>Landing Pages, Sites, E-commerces e Apps. </span></motion.p>
 
                 </span>
               </div>
               <div className="containerSkill">
                 <div className={abaSobre ? "skill active" : "skill"}>
-                  <div className="skillTitle">
+                  <motion.div
+                      initial={{left: "-20rem"}}
+                      whileInView={{left: "0rem"}}
+                      transition={{duration : 3.5, type: 'spring'}}  
+                      className="skillTitle">
                     <span>HTML5</span>
                     <span className="percentual">80%</span>
                     <div className="barra">
-                      <span className="barraPercentual box1"></span>
+                      <motion.span
+                        initial={{left: "-20rem"}}
+                        whileInView={{left: "0rem"}}
+                        transition={{duration : 1, type: 'spring'}}  
+                        className="barraPercentual box1">
+                      </motion.span>
                     </div>
-                  </div>
-                  <div className="skillTitle">
+                  </motion.div>
+                  <motion.div
+                      initial={{left: "-20rem"}}
+                      whileInView={{left: "0rem"}}
+                      transition={{duration : 3.5, type: 'spring'}}  
+                      className="skillTitle">
                     <span>Javascript</span>
                     <span className="percentual">70%</span>
                     <div className="barra">
-                      <span className="barraPercentual box2"></span>
+                      <motion.span
+                        initial={{left: "-20rem"}}
+                        whileInView={{left: "0rem"}}
+                        transition={{duration : 1, type: 'spring'}}  
+                        className="barraPercentual box2">
+                      </motion.span>
                     </div>
-                  </div>
-                  <div className="skillTitle">
+                  </motion.div>
+                  <motion.div
+                      initial={{left: "-20rem"}}
+                      whileInView={{left: "0rem"}}
+                      transition={{duration : 3.5, type: 'spring'}}  
+                      className="skillTitle">
                     <span>CSS3</span>
                     <span className="percentual">80%</span>
                     <div className="barra">
-                      <span className="barraPercentual box3"></span>
+                      <motion.span
+                        initial={{left: "-20rem"}}
+                        whileInView={{left: "0rem"}}
+                        transition={{duration : 1, type: 'spring'}}  
+                        className="barraPercentual box3">
+                      </motion.span>
                     </div>
-                  </div>
-                  <div className="skillTitle">
-                    <span>ReactJs</span>
-                    <span className="percentual">60%</span>
+                  </motion.div>
+                  <motion.div
+                      initial={{left: "-20rem"}}
+                      whileInView={{left: "0rem"}}
+                      transition={{duration : 3.5, type: 'spring'}}  
+                      className="skillTitle">
+                    <span>ReactJS</span>
+                    <span className="percentual">80%</span>
                     <div className="barra">
-                      <span className="barraPercentual box4"></span>
+                      <motion.span
+                        initial={{left: "-20rem"}}
+                        whileInView={{left: "0rem"}}
+                        transition={{duration : 1, type: 'spring'}}  
+                        className="barraPercentual box4">
+                      </motion.span>
                     </div>
-                  </div>
-                  <div className="skillTitle">
+                  </motion.div>
+                  <motion.div
+                      initial={{left: "-20rem"}}
+                      whileInView={{left: "0rem"}}
+                      transition={{duration : 3.5, type: 'spring'}}  
+                      className="skillTitle">
                     <span>FireBase</span>
                     <span className="percentual">70%</span>
                     <div className="barra">
-                      <span className="barraPercentual box7"></span>
+                      <motion.span
+                        initial={{left: "-20rem"}}
+                        whileInView={{left: "0rem"}}
+                        transition={{duration : 1.5, type: 'spring'}}  
+                        className="barraPercentual box5">
+                      </motion.span>
                     </div>
-                  </div>
-                  <div className="skillTitle">
+                  </motion.div>
+                  <motion.div
+                      initial={{left: "-20rem"}}
+                      whileInView={{left: "0rem"}}
+                      transition={{duration : 3.5, type: 'spring'}}  
+                      className="skillTitle">
                     <span>React Native</span>
                     <span className="percentual">40%</span>
                     <div className="barra">
-                      <span className="barraPercentual box5"></span>
+                      <motion.span
+                        initial={{left: "-20rem"}}
+                        whileInView={{left: "0rem"}}
+                        transition={{duration : 1, type: 'spring'}}  
+                        className="barraPercentual box6">
+                      </motion.span>
                     </div>
-                  </div>
-                  <div className="skillTitle">
+                  </motion.div>
+                  <motion.div
+                      initial={{left: "-20rem"}}
+                      whileInView={{left: "0rem"}}
+                      transition={{duration : 3.5, type: 'spring'}}  
+                      className="skillTitle">
                     <span>NodeJs</span>
                     <span className="percentual">45%</span>
                     <div className="barra">
-                      <span className="barraPercentual box6"></span>
+                      <motion.span
+                        initial={{left: "-20rem"}}
+                        whileInView={{left: "0rem"}}
+                        transition={{duration : 1, type: 'spring'}} 
+                        className="barraPercentual box7">
+                      </motion.span>
                     </div>
-                  </div>
-                  
-                  <div className="skillTitle">
-                    <span>NextJs</span>
-                    <span className="percentual">30%</span>
+                  </motion.div>          
+                  <motion.div
+                      initial={{left: "-20rem"}}
+                      whileInView={{left: "0rem"}}
+                      transition={{duration : 3.5, type: 'spring'}}  
+                      className="skillTitle">
+                    <span>NodeJs</span>
+                    <span className="percentual">45%</span>
                     <div className="barra">
-                      <span className="barraPercentual box8"></span>
+                      <motion.span
+                        initial={{left: "-20rem"}}
+                        whileInView={{left: "0rem"}}
+                        transition={{duration : 1, type: 'spring'}} 
+                        className="barraPercentual box8">
+                      </motion.span>
                     </div>
-                  </div>
+                  </motion.div> 
                 </div>
                 <div className="btnSobre">
                 <a className='buttonHome'>
@@ -281,7 +372,11 @@ useEffect(() => {
           </div>
         </section>
         <section id='skills'>
-          <div className="containerBox">
+          <motion.div
+              initial={{left: "-20rem"}}
+              whileInView={{left: "0rem"}}
+              transition={{duration : 2, type: 'spring'}}  
+              className="containerBox">
             <h1 className='titleService' id='skills'>Minhas Habilidades</h1>
             <div className="textInfo">
               <p className='textService'>Essas são as principais habilidades e tecnologias que me dar todo suporte e me auxiliam no meu desempenho na programação diária e desenvolvimento web.</p>
@@ -434,7 +529,11 @@ useEffect(() => {
               
               </ul>
               <button onClick={btnSkill} className="btnMaisService btnOne">Ver Mais</button>
-              <div className="cardInfo">
+              <motion.div
+                initial={{left: "20rem"}}
+                whileInView={{left: "0rem"}}
+                transition={{duration : 3.5, type: 'spring'}} 
+                className="cardInfo">
                 <div className="cardItem">
                   <h2>C</h2>
                 </div>
@@ -453,11 +552,15 @@ useEffect(() => {
                   </div>
                 </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         </section>
-        <section id='portifolio'>
+        <motion.section
+          initial={{left: "-20rem"}}
+          whileInView={{left: "0rem"}}
+          transition={{duration : 2, type: 'spring'}}  
+          id='portifolio'>
           <div className="containerBox">
             <h1 className='titleService'>Meus Projetos</h1>  
             <p className='textService'>Esses são meus principais projetos, você pode conferir todos meus repositórios e projetos no GitHub. <a href="https://github.com/ffernandescs" target="blank_"> Acesse-o agora..</a></p>
@@ -475,8 +578,12 @@ useEffect(() => {
                 </BrowserRouter>
             </div> 
           </div>
-        </section>
-        <footer id='curriculum'>
+        </motion.section>
+        <motion.footer
+          initial={{left: "-20rem"}}
+          whileInView={{left: "0rem"}}
+          transition={{duration : 2, type: 'spring'}}
+          id='curriculum'>
           <div className="downloadCV">
             <div className="textBtn">
               <h1>Baixe o CV</h1>
@@ -492,8 +599,13 @@ useEffect(() => {
             <div className="contatoSocial">
 
             </div>
-        </footer>
-        <footer className='tagFooter' id='contato'>
+        </motion.footer>
+        <motion.footer
+          initial={{left: "20rem"}}
+          whileInView={{left: "0rem"}}
+          transition={{duration : 2, type: 'spring'}}
+          className='tagFooter' 
+          id='contato'>
             <div className='contFooter'>
               <div className='footer'>
                 <div className="boxFooter">
@@ -557,7 +669,7 @@ useEffect(() => {
                 <span>Copyright © 2022, FFCS - Todos os direitos reservados.</span>
               </div>
           </div>
-        </footer>
+        </motion.footer>
       </div>
     
       <div className="btnTop">
