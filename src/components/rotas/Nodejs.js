@@ -19,7 +19,7 @@ export const NodeJs = () => {
               <Link to="/reactnative">React Native</Link>
             </li>
             <li>
-              <Link to="/nodejs">NodeJs</Link>
+              <Link className='borderLinkRotas' to="/nodejs">NodeJs</Link>
             </li>
             <li>
               <Link to="/nextjs">NextJs</Link>

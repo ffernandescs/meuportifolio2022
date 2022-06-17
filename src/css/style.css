@@ -1,8 +1,6 @@
 .App {
     position: relative;
     background-color: #000000;
-    height: 100vh;
-
 }
 
 .containerPage {
@@ -14,32 +12,57 @@
     background-color: #000000;
 }
 
-.spinner {
-    width: 100%;
-    height: 100%;
-}
-
 .spinner2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 55px;
-    color: #DE4313;
+    width: 100%;
+    height: 100vh;
+}
+
+.spinner2 .css-1pelfdf {
+    position:initial;
+    margin: 0;
+}
+
+
+.nameCode {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 110px;
+    font-weight: bold;
+    margin-left: 10px;
+    padding-right: 20px;
+    color: #fff;
+}
+
+.nameCode::before {
     position: absolute;
-    top: 50px;
-    left: -250px;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    overflow: hidden;
+    top: 0;
+    right: -10px;
+    content: 'r';
+    width: 30px;
+    height: 70px;
+    color: #fff;
 
 }
 
-.nameCode {
-    position: absolute;
-    right: 570px;
-    font-size: 110px;
-    font-weight: bold;
+.nameCode .line {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50px;
+    height: 77px;
+    margin-left: 0px;
+}
+
+.nameCode .line span {
+    width: 100%;
+    height: 13px;
+    background-color: #ff4800;
 }
 
 .spinner.active {
@@ -125,11 +148,13 @@
 }
 
 .menu {
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     transition: 0.9s;
+    z-index: 99999;
 }
 
 
@@ -180,6 +205,11 @@
     border-radius: 10px;
 }
 
+
+.line .line2 span {
+    background-color: #fff;
+}
+
 .titleLogo {
     font-size: 35px;
     color: #fff;
@@ -198,6 +228,7 @@ nav {
     justify-content: center;
     height: 100%;
 }
+
 
 .navigation {
     display: flex;
@@ -256,7 +287,7 @@ main {
     justify-content: space-between;
     max-width: 1400px;
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100vh + 70px);
     padding: 0 20px;
 
 }
@@ -324,7 +355,6 @@ main {
     justify-content: flex-end;
     width: 45%;
     height: calc(100vh - 200px);
-    cursor: pointer;
     margin-right: 15px;
     overflow: hidden;
 }
@@ -336,11 +366,9 @@ main {
     width: 100%;
     height: 100%;
     content: '';
-    background-color: #0000004d;
+    background-color: #00000080;
     z-index: 0;
 }
-
-
 
 .fundoImg {
     position: absolute;
@@ -427,10 +455,14 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     width: 50%;
     margin-left: 25px;
+    transition: all .3s ease;
     overflow: hidden;
+}
+
+.infoSobre.active {
+    padding-bottom: 20px;
 }
 
 .titleSobre {
@@ -440,9 +472,18 @@ section {
     margin-bottom: 15px;
 }
 
+.textInfo {
+    display: flex;
+}
+
 .textSobre {
-    font-size: 13px;
+    font-size: 14px;
     color: #fff;
+}
+
+.textSobre span {
+    font-weight: bold;
+    color: rgb(235, 139, 29);
 }
 
 .containerSkill {
@@ -456,7 +497,14 @@ section {
 
 .skill {
     width: 100%;
-    height: 370px;
+    height: 200px;
+    overflow: hidden;
+}
+
+
+.skill.active {
+    height: initial;
+    padding-bottom: 20px;
 }
 
 .skillTitle {
@@ -481,6 +529,9 @@ section {
     z-index: 1;
 }
 
+
+
+
 .barra .barraPercentual {
     position: absolute;
     left: 0;
@@ -491,41 +542,81 @@ section {
     border-top-left-radius: 10px ;
     margin: 0;
     z-index: 2;
+    transition: all 10s ease;
 }
 
 .box1 {
     width: 80%;
+    animation: progressBox1 10s forwards;
 }
 
 .box2 {
     width: 70%;
+    animation: progressBox2 10s forwards;
 }
 
 .box3 {
     width: 80%;
+    animation: progressBox3 10s forwards;
 }
 
 .box4 {
     width: 60%;
+    animation: progressBox4 10s forwards;
 }
 
 .box5 {
     width: 40%;
+    animation: progressBox5 10s forwards;
 }
 
 .box6 {
     width: 40%;
+    animation: progressBox6 10s forwards;
 }
 
 .box7 {
     width: 70%;
+    animation: progressBox7 10s forwards;
 }
 
 .box8 {
     width: 30%;
+    animation: progressBox8 10s forwards;
 }
 
-
+@keyframes progressBox1 {
+    0% {width: 0%;}
+    100% {width: 80%;}
+}
+@keyframes progressBox2 {
+    0% {width: 0%;}
+    100% {width: 70%;}
+}
+@keyframes progressBox3 {
+    0% {width: 0%;}
+    100% {width: 80%;}
+}
+@keyframes progressBox4 {
+    0% {width: 0%;}
+    100% {width: 60%;}
+}
+@keyframes progressBox5 {
+    0% {width: 0%;}
+    100% {width: 40%;}
+}
+@keyframes progressBox6 {
+    0% {width: 0%;}
+    100% {width: 40%;}
+}
+@keyframes progressBox7 {
+    0% {width: 0%;}
+    100% {width: 70%;}
+}
+@keyframes progressBox8 {
+    0% {width: 0%;}
+    100% {width: 30%;}
+}
 
 .skillTitle span {
     position: relative;
@@ -550,6 +641,13 @@ section {
     color: rgb(255, 255, 255);
     font-size: 10px;
     font-weight: bold;
+    animation: barraPercentual 20s forwards;
+
+}
+
+@keyframes barraPercentual {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 .btnSobre {
@@ -578,13 +676,23 @@ section {
     margin-bottom: 20px;
 }
 
+
+
 .textService {
     max-width: 700px;
     width: 100%;
-    font-size: 12px;
+    font-size: 14px;
     color: #fff;
     margin-bottom: 40px;
     text-align: center;
+}
+
+.textService a {
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(235, 139, 29);;
+    margin-left: 10px;
+    text-decoration: underline;
 }
 
 .linkServices {
@@ -601,6 +709,10 @@ section {
     width: 100%;
     height: 170px;
     overflow: hidden;
+}
+
+.listaServices.active {
+    height: initial;
 }
 
 .btnItem {
@@ -741,6 +853,7 @@ section {
     height: 70px;
 }
 
+
 .cardItem .line span {
     width: 100%;
     height: 12px;
@@ -765,6 +878,11 @@ section {
     justify-content: center;
     width: 100%;
     margin-bottom: 20px;
+    border-bottom: 2px solid #000000;
+}
+
+.borderLinkRotas {
+    border-bottom: 2px solid #ff4800;
 }
 
 .linkRotas li {
@@ -772,9 +890,6 @@ section {
     border-bottom: 2px solid transparent;
 }
 
-.linkRotas li:hover {
-    border-bottom: 2px solid #ff4800;
-}
 
 .linkRotas li a {
     display: block;
@@ -798,7 +913,8 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 25%;
+    width: 100%;
+    max-width: 400px;
     background-color: #111111;
     border-radius: 10px;
     color: #fff;
@@ -974,7 +1090,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 40%;
+    width: 55%;
     height: 100%;
 }
 
@@ -986,8 +1102,8 @@ footer {
 }
 
 .boxFooter p {
-    max-width: 100%;
-    color: #707070;
+    max-width: 70%;
+    color: #fff;
     font-size: 14px;
     margin-bottom: 15px;
 }
@@ -1044,7 +1160,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;
+    width: 45%;
     height: 100%;
     padding-right: 20px;
 }
@@ -1140,6 +1256,7 @@ form label textarea {
     opacity: 0;
     pointer-events: none;
     transition: .3s ease;
+    z-index: 5;
 }
 
 .btnTopScroll.active {
@@ -1209,47 +1326,59 @@ form label textarea {
     .menu {
         position: relative;
     }
-
-
-    nav {
+    .navMenu {
         position: absolute;
-        width: 70%;
+        width: 100%;
         height: 100vh;
-        left: -100%;
-        top: 0;
-        background-color: #111111;
+        top: -100%;
+        right: 0;
+        background-color: #000;
         z-index: 7;
-        box-shadow: 0 0 25px #333;
         visibility: hidden;
         opacity: 0;
         pointer-events: none;
+        transition: .3s ease;
     }
 
-    nav.active {
-        left: 0;
+    .containerTopMenu.menuResponsive .navMenu {
+        top: 0;
+        right: 0;
         visibility: visible;
         opacity: 1;
         pointer-events: auto;
     }
 
+    .containerTopMenu.menuResponsive .menuHamburger svg:first-child {
+        display: none;
+    }
+
+    .containerTopMenu.menuResponsive .menuHamburger svg:last-child {
+        display: block;
+    }
+
     .navigation {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: flex-end;
         justify-content: flex-start;
         width: 100%;
         height: 100%;
         padding: 0;
-        z-index: 6;
-        margin-top: 70px;
+        margin-top: 120px;
     }
 
     .navigation li {
-        height: 70px;
+        margin-bottom: 20px;
     }
+
+    .btnContatos {
+        margin-right: 20px;
+    }
+    
 
     .navigation li:hover {
         background-color: transparent;
+        border: none;
     }
     
     .navigation li:last-child {
@@ -1265,29 +1394,63 @@ form label textarea {
 
     .menuHamburger {
         position: absolute;
-        top: 25px;
+        top: 15px;
         right: 25px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         width: 40px;
-        height: 30px;
         z-index: 8;
         overflow: hidden;
         cursor: pointer;
         transition: all 0.3s ease;
     }
 
-    .menuHamburger .line2 {
-        
-        width: 40px;
-        height: 3px;
-        background-color: #ff4800;
+    .menuHamburger svg {
+        color: #DE4313;
+        font-size: 45px;
+    }
+
+    .btnXMenu {
+        display: none;
+    }
+
+    main {
+        height: 100vh;
+        align-items: initial;
     }
 
     .main {
         flex-direction: column-reverse;
         padding: 40px 0;
+        height: initial;
+    }
+
+ 
+
+    .logoImg {
+        justify-content: center;
+        width: 50%;
+        height: 40%;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .logoImg .imgPerfil  {
+        position: static;
+        height: 300px;
+        max-width: initial;
+        margin: 0;
+
+    }
+
+    .fundoImg {
+        top: 0;
+        right: initial;
+        width: auto;
+        height: 300px;
+        max-width: initial;
+        margin: 0;
     }
 
     .texHome {
@@ -1295,34 +1458,76 @@ form label textarea {
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-
-    .logoImg {
-        width: 50%;
-        overflow: hidden;
-    }
-
-    .logoImg .imgPerfil  {
-        width: 100%;
-        height: 350px;
         margin: 0;
+        margin-top: 50px;
     }
 
-    .fundoImg {
-        width: 100%;
-        height: 350px;
-        margin: 0;
+    .texHome::after {
+        top: -250px;
+    }
+
+    .texHome::before {
+        top: -215px;
     }
 
     .nameDev {
+        max-width: initial;
         font-size: 35px;
         text-align: center;
     }
 
+    .boxSobre {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
 
+    .boxSobre {
+        height: initial;
+    }
+
+    .btnSobre {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .buttonHome a {
+        margin: 0;
+    }
+
+    .buttonHome .btnTwo {
+        margin: 0;
+    }
+
+    .btnSobre a {
+        margin: 0;
+    }
+    
+    .btnMaisService {
+        margin-bottom: 30px;
+    }
+
+    .sliderProject li {
+        max-width: 330px;
+    }
+
+    .linkRotas {
+        flex-wrap: wrap;
+    }
+    
+    .linkRotas li a {
+        padding: 10px 15px;
+    }
+
+    .boxFooter p {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 750px) {
+    .cardInfo {
+        display: none;
+    }
+
     .containerSobre {
         display: none;
     }
@@ -1365,7 +1570,8 @@ form label textarea {
     }
 
     .footer {
-        padding-bottom: 80px;
+        padding: 0;
+        padding-bottom: 60px;
     }
 
     .sliderProject ul {
@@ -1400,12 +1606,57 @@ form label textarea {
 }
 
 @media (max-width: 600px) {
+
+    .spinner2 {
+        padding: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .spinner2 span  {
+        position: relative;
+        right: initial;
+        margin:0;
+    }
+
+    .spinner2 span span:last-child {
+        top: 35%;
+    }
+        
+    .nameCode {
+        font-size: 50px;
+        margin-left: 10px;
+    }
+
+    .nameCode .line {   
+        width: 30px;
+        height: 40px;
+    }
+
+    .nameCode .line span {
+        height: 8px;
+    }
+
+    main {
+        height: initial;
+    }
+
+    .main {
+        height: 100vh;
+        padding-bottom: 0;
+    }
+
+    .nameDev {
+        font-size: 25px;
+    }
+
     .cardInfo {
         justify-content: center;
     }
 
     .nameProfessional {
         text-align: center;
+        margin-bottom: 20px;
     }
 
     .cardItem {
@@ -1414,11 +1665,6 @@ form label textarea {
 
     .btnItem {
         width: 48%;
-    }
-
-    .logoImg {
-        width: 200px;
-        height: 200px;
     }
 
     .infoSobre {
@@ -1436,14 +1682,17 @@ form label textarea {
         height: 250px;
     } 
 
+    .boxFooter  .textFooter {
+        margin-bottom: 40px;
+    }
+
     .itemContact {
-        flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 
     .itemContact span {
-        margin-bottom: 15px;
-    
+        
+        margin-right: 10px;
     }
 
     .textContact {
@@ -1462,51 +1711,84 @@ form label textarea {
         height: 60px;
         text-align: center;
     }
+}
+
+@media (max-width: 440px) {
+
+    main {
+        border-bottom: 4px solid rgba(51, 51, 51, 0.524);
+    }
+
+    section {
+        border-bottom: 4px solid rgba(51, 51, 51, 0.524);
+        margin: 0 0;
+        padding: 40px 20px;
+    }
     
-    .texHome {
-        position: static;
+    footer {
+        padding: 80px 0;
+        border-bottom: 4px solid rgba(51, 51, 51, 0.524);
+
+    }
+
+    .fundoImg{
+        height: 200px;
+    }
+    
+    .logoImg .imgPerfil {
+        height: 200px;
     }
 
     .nameDev {
-        font-size: 22px;
-        line-height: 35px;
+        width: 100%;
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 70px;
     }
-
-    main {
-        width: auto;
-    }
-
-    .texHome {
-        padding: 0 20px;
-    }
-
-    .nameProfessional {
-        padding: 0;
-    }
-
-    .buttonHome {
-        margin-left: 10px;
-    }
-
-    .main {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: auto;
-    }
-}
-
-@media (max-width: 400px) {
+    
     .texHome::after {
-        top: -85px;
-        left: 45px;
+        top: -55px;
+        left: 25px;
+        width: 90px;
+        height: 30px;
     }
 
     .texHome::before {
-        top: -45px;
-        left: 90px;
+        top: -30px;
+        left: 60px;
+    }
+
+    .btnOne, .btnTwo {
+        width: 120px;
+        height: 45px;
+    }
+
+    .sliderProject li {
+        padding: 10px;
+    }
+
+    .titleSobre, .titleService, .boxFooter h1 {
+        font-size: 25px;
+    }
+
+    .itemContact {
+        margin-bottom: 10px;
+    }
+
+    .textContact h1 {
+        font-size: 14px;
+    }
+
+    .btnTop svg {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btnItem {
+        width: 100%;
     }
 }
+
 
 
 

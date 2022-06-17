@@ -22,7 +22,7 @@ export const NextJs = () => {
               <Link to="/nodejs">NodeJs</Link>
             </li>
             <li>
-              <Link to="/nextjs">NextJs</Link>
+              <Link className='borderLinkRotas' to="/nextjs">NextJs</Link>
             </li>
             <li>
               <Link to="/firebase">Firebase</Link>

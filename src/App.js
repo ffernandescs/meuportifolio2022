@@ -26,19 +26,25 @@ import {
   FaBootstrap,
   FaSass
 } from "react-icons/fa";
-import { 
-  GoLocation, GoMail } from "react-icons/go";
+import { GoLocation, GoMail } from "react-icons/go";
+import { RiCloseLine, RiMenuFill } from "react-icons/ri";
 import { useEffect, useState } from 'react'
 import { Link } from 'react-scroll'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import { Html, Javascript, ReactJS, Reactnative, NodeJs, NextJs, Firebase } from './components/index.js'
 import { HashLoader } from 'react-spinners'
 import {css} from '@emotion/react'
+import ProgressBar from './components/ProgressBar'
+
 
 
 function App() {
 
 const [menuFixedColor, setMenuFixedColor] = useState(false)
+const [menuHamburger, setMenuHamburger] = useState(false)
+const [abaSkills, setAbaSkills] = useState(false)
+const [abaSobre, setAbaSobre] = useState(false)
+
 
 
 const menuFixed = () => {
@@ -49,8 +55,20 @@ const menuFixed = () => {
   }
 }
 
-window.addEventListener('scroll', menuFixed)
+const btnMenuHamburger = () => {
+  setMenuHamburger(!menuHamburger)
+}
 
+const btnSkill = () => {
+  setAbaSkills(!abaSkills)
+}
+
+const btnSobre = () => {
+  setAbaSobre(!abaSobre)
+}
+
+
+window.addEventListener('scroll', menuFixed)
 const override = css`
   display: block;
   margin: 0 auto;
@@ -64,27 +82,58 @@ const override = css`
   `;
 
 const [loading, setLoading] =useState(false)
-let [color, setColor] = useState("#fff");
+let [color, setColor] = useState("#ff4800");
+
+
+let fontSize = '100px'
+
+function fontSizeLoading() {
+  if(window.innerWidth < 600) {
+    fontSize = '50px'
+  } else {
+    fontSize = '100px'
+  }
+}
+
+
+
+fontSizeLoading()
 
 useEffect(() => {
+
   setLoading(true)
   setTimeout(() => {
     setLoading(false)
-  }, 2000)
+  }, 30)
 }, [])
 
+
+
   return (
+    
   <div className="App">
     {
       loading?
      <div className='spinner2'> 
-      <HashLoader color={color} loading={loading} css={override} size={100} />
-      <span className='nameCode'>Code</span>
+      <HashLoader color={color} loading={loading} css={override} size={fontSize}  />
+      <div className='nameCode'>Cod
+        <div className="line">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>  
      </div> :
     <div className="spinner">
       <div className="containerPage">
         <header className={menuFixedColor ? "menu active" : "menu"}>
-          <div className="containerTopMenu">
+        
+          <div className={menuHamburger ? "containerTopMenu menuResponsive" : "containerTopMenu"}>
+          <div className="menuHamburger" onClick={btnMenuHamburger}>
+            <RiMenuFill/>
+            <RiCloseLine className='btnXMenu'/>
+          </div>
+            
             <div className="logo">
               <div className="line">
                 <span></span>
@@ -95,26 +144,26 @@ useEffect(() => {
               <h1 className='title2'>r</h1>
               
             </div>
-            <nav>
-              <ul className='navigation'>
+            <nav className="navMenu">
+              <ul className='navigation' >
                 <li>
-                  <Link to="inicio" spy={true} smooth={true} offset={-180} duration={500} className='textMenu'>inicio</Link>
+                  <Link onClick={btnMenuHamburger} to="inicio" spy={true} smooth={true} offset={-100} duration={500} className='textMenu'>inicio</Link>
                 </li>
                 <li>
-                  <Link to="sobre" spy={true} smooth={true} offset={-180} duration={500} className='textMenu'>Sobre</Link>
+                  <Link onClick={btnMenuHamburger} to="sobre" spy={true} smooth={true} offset={-100} duration={500} className='textMenu'>Sobre</Link>
                 </li>
                 <li>
-                  <Link to="skills" spy={true} smooth={true} offset={-100} duration={500} className='textMenu'>Skills</Link>
+                  <Link onClick={btnMenuHamburger} to="skills" spy={true} smooth={true} offset={-100} duration={500} className='textMenu'>Skills</Link>
                 </li>
                 <li>
-                  <Link to="portifolio" spy={true} smooth={true} offset={-150} duration={500} className='textMenu'>Portifolio</Link>
+                  <Link onClick={btnMenuHamburger} to="portifolio" spy={true} smooth={true} offset={-100} duration={500} className='textMenu'>Portifolio</Link>
                 </li>
                 
                 <li>
-                  <Link to="curriculum" spy={true} smooth={true} offset={-150} duration={500} className='textMenu'>Curriculum</Link>
+                  <Link onClick={btnMenuHamburger} to="curriculum" spy={true} smooth={true} offset={-100} duration={500} className='textMenu'>Curriculum</Link>
                 </li>
                 <div>
-                  <Link to="contato" spy={true} smooth={true} offset={-180} duration={500} className='textMenu'>
+                  <Link onClick={btnMenuHamburger} to="contato" spy={true} smooth={true} offset={-100} duration={500} className='textMenu'>
                     <button className="btnOne btnContatos">Contato</button>
                   </Link>
                 </div>
@@ -125,8 +174,8 @@ useEffect(() => {
           <main>
           <div className="main" id='inicio'>
             <div className="texHome">
-              <h1 className='nameDev'>Me chamo Felipe Fernandes</h1>
-              <p className='nameProfessional'>Front End Developer</p>
+              <h1 className='nameDev'>Olá, eu sou o Felipe Fernandes</h1>
+              <p className='nameProfessional'>Sou Desenvolvedor Front-End.</p>
               <div className="btnHome">
                 <a className='buttonHome' href="https://drive.google.com/file/d/1mSShXzYGRbRx8qJiS2ComooY_MZTelt5/view?usp=sharing" target="blank_">
                   <button className='btnOne'>Download CV</button>
@@ -149,9 +198,17 @@ useEffect(() => {
             </div>
             <div className="infoSobre" id='sobre'>
               <h1 className='titleSobre'>Leia sobre minha história de luta de vida</h1>
-              <p className='textSobre'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et is the quasi architecto beatae vitae dicta sunt explicabo.</p>
+              <div className="textInfo">
+                <span>
+                <p className='textSobre'>Ola pessoal! sejam bem vindos ao meu site. Meu nome é Felipe, tenho<span> 28 </span>
+                  anos e moro em Recife-PE, atualmente atuo como 
+                  <span> Desenvolvedor Front End, 
+                  </span> Sou Formado em Redes de Computadores com mais de 8 anos de experiências na area de Suporte, porem a alguns anos estou focado em desenvolvimento Web/Mobile pois estou em busca de um sonho muito antigo que é ser programador. Sou apaixonado por tecnologias e sempre procuro buscar conhecimento e aprimorar minhas habilidades em busca de um maior crescimento profissional. É sempre gratificante poder entregar a melhor experiência com os produtos e serviços desenvolvidos por mim. Eu tenho alguns projetos de minha autoria como: <span>Landing Pages, Sites, E-commerces e Apps. </span></p>
+
+                </span>
+              </div>
               <div className="containerSkill">
-                <div className="skill">
+                <div className={abaSobre ? "skill active" : "skill"}>
                   <div className="skillTitle">
                     <span>HTML5</span>
                     <span className="percentual">80%</span>
@@ -210,25 +267,27 @@ useEffect(() => {
                     </div>
                   </div>
                 </div>
-                
-              </div>
-              <div className="btnSobre">
-                <a className='buttonHome' href="#">
-                  <button className='btnOne'>Ver mais</button>
+                <div className="btnSobre">
+                <a className='buttonHome'>
+                  <button className='btnOne' onClick={btnSobre}>Ver mais</button>
                 </a>
-                <Link className='buttonHome' to="portifolio" spy={true} smooth={true} offset={-180} duration={500}>
-                  <button className='btnTwo'>Meus Serviços</button>
+                <Link className='buttonHome' to="skills" spy={true} smooth={true} offset={-100} duration={500}>
+                  <button className='btnTwo'>Meus Skills</button>
                 </Link>
               </div>
+              </div>
+              
             </div>
           </div>
         </section>
         <section id='skills'>
           <div className="containerBox">
-            <h1 className='titleService'>Meus Serviços</h1>
-            <p className='textService'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et is the quasi architecto beatae vitae dicta sunt explicabo.</p>
+            <h1 className='titleService' id='skills'>Minhas Habilidades</h1>
+            <div className="textInfo">
+              <p className='textService'>Essas são as principais habilidades e tecnologias que me dar todo suporte e me auxiliam no meu desempenho na programação diária e desenvolvimento web.</p>
+            </div>            
             <div className="linkServices">
-              <ul className="listaServices">
+              <ul className={abaSkills ? "listaServices active" : "listaServices"}>
                 <li className="btnItem">
                   <a href="https://git-scm.com/" target="blank_">
                     <div className="iconText">
@@ -374,7 +433,7 @@ useEffect(() => {
                 </li>
               
               </ul>
-              <button className="btnMaisService btnOne">Ver Mais</button>
+              <button onClick={btnSkill} className="btnMaisService btnOne">Ver Mais</button>
               <div className="cardInfo">
                 <div className="cardItem">
                   <h2>C</h2>
@@ -400,8 +459,8 @@ useEffect(() => {
         </section>
         <section id='portifolio'>
           <div className="containerBox">
-            <h1 className='titleService'>Portifolio</h1>  
-            <p className='textService'>Sed ut perspiciatis unde omnis iste natus error sit voluptatem  totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et is the quasi architecto beatae vitae dicta sunt explicabo.</p>
+            <h1 className='titleService'>Meus Projetos</h1>  
+            <p className='textService'>Esses são meus principais projetos, você pode conferir todos meus repositórios e projetos no GitHub. <a href="https://github.com/ffernandescs" target="blank_"> Acesse-o agora..</a></p>
             <div className='navigationRoutes'>
                 <BrowserRouter>
                   <Switch>
@@ -439,7 +498,7 @@ useEffect(() => {
               <div className='footer'>
                 <div className="boxFooter">
                   <h1>Contatos</h1>
-                  <p>Let's make something new, different and more meaningfulor make thing more visual or conceptual?</p>
+                  <p className='textFooter'>Se você quiser conversar, entre em contato, estou quase sempre online.</p>
                 <div className="itemContact">
                   <span><FaPhoneSquare/></span>
                   <div className="textContact">
@@ -495,7 +554,7 @@ useEffect(() => {
                 <button className='btnOne'>Enviar</button>
               </form>
               <div className="copyright">
-                <span>Copyright ©2022 Felipe Fernandes. All Rights Reserved.</span>
+                <span>Copyright © 2022, FFCS - Todos os direitos reservados.</span>
               </div>
           </div>
         </footer>
@@ -504,11 +563,7 @@ useEffect(() => {
       <div className="btnTop">
         <ScrolToTOp/>
       </div>
-      <div className="menuHamburger">
-        <span className="line2 one"></span>
-        <span className="line2 two"></span>
-        <span className="line2 tre"></span>
-      </div>
+      
       </div>
      }
   </div>

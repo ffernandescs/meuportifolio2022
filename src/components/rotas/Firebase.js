@@ -1,3 +1,4 @@
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import img2 from '../../assets/img/imgReadme2.png' 
 import img4 from '../../assets/img/imgReadme4.png'
@@ -9,7 +10,8 @@ import img9 from '../../assets/img/imgReadme9.png'
 import img10 from '../../assets/img/imgReadme10.png'
 import img11 from '../../assets/img/imgReadme11.png'
 
-export const Firebase = () => {
+
+export const Firebase = () => { 
     return (
         <nav className="containerPortifolio">
           <ul className="linkRotas">
@@ -32,7 +34,7 @@ export const Firebase = () => {
               <Link to="/nextjs">NextJs</Link>
             </li>
             <li>
-              <Link to="/firebase">Firebase</Link>
+              <Link className='borderLinkRotas' to="/firebase">Firebase</Link>
             </li>
           </ul>
           <ul className='sliderProject'>

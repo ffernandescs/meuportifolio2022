@@ -10,10 +10,10 @@ export const ReactJS = () => {
               <Link to="/">Html</Link>
             </li>
             <li>
-              <Link to="/javascript">React</Link>
+              <Link to="/javascript">Javascript</Link>
             </li>
             <li>
-              <Link to="/reactjs">React</Link>
+              <Link className='borderLinkRotas' to="/reactjs">React</Link>
             </li>
             <li>
               <Link to="/reactnative">React Native</Link>

@@ -16,7 +16,7 @@ export const Reactnative = () => {
               <Link to="/reactjs">React</Link>
             </li>
             <li>
-              <Link to="/reactnative">React Native</Link>
+              <Link className='borderLinkRotas' to="/reactnative">React Native</Link>
             </li>
             <li>
               <Link to="/nodejs">NodeJs</Link>

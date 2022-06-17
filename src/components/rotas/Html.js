@@ -15,7 +15,7 @@ export const Html = () => {
         <nav className="containerPortifolio">
           <ul className="linkRotas">
             <li>
-              <Link to="/">Html</Link>
+              <Link className='borderLinkRotas' to="/">Html</Link>
             </li>
             <li>
               <Link to="/javascript">Javascript</Link>

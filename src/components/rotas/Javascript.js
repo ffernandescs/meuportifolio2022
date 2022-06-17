@@ -18,7 +18,7 @@ export const Javascript = () => {
               <Link to="/">Html</Link>
             </li>
             <li>
-              <Link to="/javascript">Javascript</Link>
+              <Link className='borderLinkRotas' to="/javascript">Javascript</Link>
             </li>
             <li>
               <Link to="/reactjs">React</Link>
