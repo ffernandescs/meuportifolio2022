@@ -134,7 +134,7 @@ useEffect(() => {
             <RiCloseLine className='btnXMenu'/>
           </div>
             
-            <div className="logo">
+            <Link className="logo" to="inicio" spy={true} smooth={true} offset={-100} duration={500}>
               <div className="line">
                 <span></span>
                 <span></span>
@@ -143,7 +143,7 @@ useEffect(() => {
               <h1 className='titleLogo'>Cod</h1>
               <h1 className='title2'>r</h1>
               
-            </div>
+            </Link>
             <nav className="navMenu">
               <ul className='navigation' >
                 <li>
