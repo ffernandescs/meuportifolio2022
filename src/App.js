@@ -104,7 +104,7 @@ useEffect(() => {
   setLoading(true)
   setTimeout(() => {
     setLoading(false)
-  }, 30)
+  }, 3000)
 }, [])
 
 
