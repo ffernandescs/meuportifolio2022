@@ -178,7 +178,7 @@ useEffect(() => {
               transition={{duration : 2, type: 'spring'}}
               className="texHome">
               <h1 className='nameDev'>Olá, eu sou o Felipe Fernandes</h1>
-              <p className='nameProfessional'>Sou Desenvolvedor Front-End.</p>
+              <p className='nameProfessional'>Sou Desenvolvedor Full Stack.</p>
               <div className="btnHome">
                 <a className='buttonHome' href="https://drive.google.com/file/d/1mSShXzYGRbRx8qJiS2ComooY_MZTelt5/view?usp=sharing" target="blank_">
                   <button className='btnOne'>Download CV</button>
