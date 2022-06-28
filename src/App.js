@@ -5,9 +5,6 @@ import fundoImg from './assets/img/fundoImg.png'
 import { ScrolToTOp } from './components/scroll/ScrollToTop.js'
 import './css/style.css'
 
-
-
-
 import { 
   FaGitSquare, 
   FaGithubSquare,  
