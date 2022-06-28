@@ -1,6 +1,7 @@
 .App {
     position: relative;
     background-color: #000000;
+    overflow: hidden;
 }
 
 .containerPage {
